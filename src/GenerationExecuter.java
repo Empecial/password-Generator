@@ -5,9 +5,12 @@ public class GenerationExecuter {
         System.out.println(myPass.getPassword());
 
         //How do you do Strong password generation?
-        PasswordGeneration myStrongPass = new StrongerPassGenerator(10);
+        StrongerPassGenerator myStrongPass = new StrongerPassGenerator(20);
         myStrongPass.generate();
         System.out.println(myStrongPass.getPassword());
 
+        WeakPassGenerator myWeakPass = new WeakPassGenerator(3);
+        myWeakPass.generate();
+        System.out.println(myWeakPass.getPassword());
     }
 }

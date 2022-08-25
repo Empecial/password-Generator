@@ -5,8 +5,13 @@ public class StrongerPassGenerator extends PasswordGeneration{
         //How do you call the constructor of the parent class (PasswordGeneration) that this class inherits from?
         //What does super mean when inherting from another class?
         super(_strongPasswordLength);
-    }
 
+        //What should happen if password is lower than 8 or higher than 20 chars?
+        if(_strongPasswordLength < 8 || _strongPasswordLength > 20)
+        {
+            throw new IllegalArgumentException("Password length must be between 8 and 20 chars");
+        }
+    }
 
     @Override
     public void generate() {
@@ -23,7 +28,7 @@ public class StrongerPassGenerator extends PasswordGeneration{
             String appendedString = "" + pickedChar;
             appendedString = randNumber == 0 ? appendedString.toUpperCase() : appendedString;
 
-            sb.append(possibleChars.charAt(super.GetRng().nextInt(randomBound)));
+            sb.append(appendedString);
         }
 
         //How do you get the final password saved?
